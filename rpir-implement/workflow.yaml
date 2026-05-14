@@ -1,0 +1,9 @@
+name: Implement
+show: workflows
+initialMessage: |
+  Start the {workflowName} loop.
+
+  Begin with Phase 1 ({firstPhaseName}).
+phases:
+  - ../_rpir/task-implementing.md
+  - ../_rpir/task-reviewing.md

@@ -1,0 +1,9 @@
+name: Research
+show: workflows
+initialMessage: |
+  Start the {workflowName} loop for: "{description}"
+
+  Begin with Phase 1 ({firstPhaseName}).
+phases:
+  - ../_rpir/scouting.md
+  - ../_rpir/web-researching.md
