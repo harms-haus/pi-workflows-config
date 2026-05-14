@@ -1,0 +1,15 @@
+name: Documentation Review
+commandName: doc-review
+sessionNamePrefix: 'DocReview: '
+sessionNameMaxLength: 50
+initialMessage: |
+  Start the {workflowName} for: "{description}"
+
+  Begin with Phase 1 ({firstPhaseName}).
+
+  Scout the codebase to understand its structure and existing documentation, then plan and write comprehensive docs organized by domain. Update README.md. If docs/ already exists, update and supplement existing files. If it doesn't, create a full documentation set.
+phases:
+  - ../_docreview/scouting.md
+  - ../_docreview/doc-planning.md
+  - ../_docreview/doc-writing.md
+  - ../_docreview/doc-reviewing.md
