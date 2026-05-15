@@ -11,3 +11,4 @@ phases:
   - { subworkflow: rpir-planning }
   - { subworkflow: rpir-implement }
   - { subworkflow: rpir-review }
+  - { subworkflow: rpir-update-docs }

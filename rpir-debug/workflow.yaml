@@ -1,0 +1,15 @@
+name: RPIR Debug Workflow
+commandName: rpir-debug
+sessionNamePrefix: 'RPIR🐛: '
+sessionNameMaxLength: 50
+initialMessage: |
+  Start the {workflowName} for: "{description}"
+
+  Begin with Phase 1 ({firstPhaseName}).
+
+  This is a lean debug workflow — focused investigation, direct todo planning, and tight fix/review loops. No bifrost, no heavy planning overhead.
+phases:
+  - ../_rpir/debug-investigation.md
+  - ../_rpir/todo-planning.md
+  - { subworkflow: rpir-debug-fix }
+  - { subworkflow: rpir-review }

@@ -9,9 +9,15 @@ tools:
 availableProfiles:
   - task-worker
   - task-worker-tests
+  - task-fixer
 ---
 
 This is an implementation OR fixing phase. Check if there are issues to resolve from the task-reviewer phase BEFORE you move on to new todos.
+
+**Profile selection:**
+- For NEW implementation todos (greenfield work, features): use `task-worker`
+- For FIX todos (from task-reviewer findings): use `task-fixer` — it's optimized for targeted, minimal fixes with tight verification
+- For test-related todos: use `task-worker-tests`
 
 Choose 1-4 new or fix todos that are ready to start in parallel.
 
@@ -22,9 +28,9 @@ If a todo is no longer relevant, use `edit_todos: { action: 'abandon', indices: 
    a. If the todo(s) have a Bifrost rune assigned, claim the rune before delegating to the subagent(s):
       `bf claim {rune-id}`
       Also be sure to include it in the prompt:
-      `delegate_to_subagents: [{ name: "task-N", prompt: "Implement todo #[N]: [text]. Bifrost rune ID: [rune-id from todo]", profile: "task-worker" }]`
+      `delegate_to_subagents: [{ name: "task-N", prompt: "Implement todo #[N]: [text]. Bifrost rune ID: [rune-id from todo]", profile: "task-worker" or "task-fixer" }]`
    b. If no Bifrost rune is assigned, omit it:
-      `delegate_to_subagents: [{ name: "task-N", prompt: "Implement todo #[N]: [text]", profile: "task-worker" }]`
+      `delegate_to_subagents: [{ name: "task-N", prompt: "Implement todo #[N]: [text]", profile: "task-worker" or "task-fixer" }]`
 3. `get_subagent_output` to see the resulting message(s)
 
 For test-related todos, use the `task-worker-tests` profile instead.

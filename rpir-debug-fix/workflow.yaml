@@ -1,0 +1,9 @@
+name: Debug Fix Loop
+show: workflows
+initialMessage: |
+  Start the {workflowName} loop.
+
+  Begin with Phase 1 ({firstPhaseName}).
+phases:
+  - ../_rpir/debug-fixing.md
+  - ../_rpir/task-reviewing.md
