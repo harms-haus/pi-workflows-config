@@ -15,9 +15,10 @@ availableProfiles:
 BIFROST STATUS CHECK: If this workflow used the bifrost-planner (check todos for rune IDs), run `bf show <main-rune-id>` to verify all runes are fulfilled. If they are not fulfilled, but the work is complete, fulfill them now. DO NOT leave bifrost dirty with unfulfilled runes. Report the overall rune tree status in your summary at the end.
 
 Spawn 1-4 parallel review specialists using `delegate_to_subagents`:
-- { name: "efficiency-review", prompt: "Review the codebase for performance and resource efficiency issues.", profile: "efficiency-reviewer" }
-- { name: "security-review", prompt: "Audit the codebase for security vulnerabilities.", profile: "security-reviewer" }
-- { name: "ui-ux-review", prompt: "Evaluate UI/UX quality and check for any broken user-facing behavior.", profile: "ui-ux-reviewer" }
+- `{ name: "efficiency-review", prompt: "Review the codebase for performance and resource efficiency issues.", profile: "efficiency-reviewer" }`
+- `{ name: "security-review", prompt: "Audit the codebase for security vulnerabilities.", profile: "security-reviewer" }`
+- `{ name: "ui-ux-review", prompt: "Evaluate UI/UX quality and check for any broken user-facing behavior.", profile: "ui-ux-reviewer" }`
+- Be sure to include `files: ["rel/file-name.md", {path: "rel/file-name2.ts", tail: 100}]` with a list of files and file chunks that the subagent will need.
 
 Collect all review results using `get_subagent_output` for each session.
 

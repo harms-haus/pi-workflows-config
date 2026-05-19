@@ -4,6 +4,14 @@ initialMessage: |
   Start the {workflowName} loop.
 
   Begin with Phase 1 ({firstPhaseName}).
+
+  This is a looping workflow:
+  1. Implement 1-4 tasks in parallel
+  2. `workflow_step next` -> reviewing
+  3. Review implemented tasks
+  4. `workflow_step loop` -> implementing
+  5. Implement 1-4 more tasks in parallel
+  6. ... etc
 phases:
   - ../_rpir/task-implementing.md
   - ../_rpir/task-reviewing.md

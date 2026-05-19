@@ -14,6 +14,8 @@ Review all implemented tasks in this loop for correctness and completeness. For 
 
 `delegate_to_subagents: [{ name: "review-N", prompt: "Review the implementation of: [task description]. Bifrost rune ID: [if present]. Check for correctness, edge cases, error handling, and adherence to the plan.", profile: "task-reviewer" }]`
 
+Be sure to include `files: ["rel/file-name.md", {path: "rel/file-name2.ts", tail: 100}]` with a list of files and file chunks that the subagent will need.
+
 After reviewing:
 - Collect all findings and categorize by severity (CRITICAL, HIGH, MEDIUM, LOW)
 - If MEDIUM, HIGH or CRITICAL issues are found, use `write_todos` to add fix tasks, then use `workflow_step` with action `loop` to restart the implement subworkflow from task-implementing

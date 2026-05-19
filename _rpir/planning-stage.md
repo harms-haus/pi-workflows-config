@@ -23,11 +23,13 @@ Use `ask_user_question` to present these decisions to the user. Ask up to 4 ques
 
 PLANNER SELECTION:
 - If the task appears simple enough, the "todo-planner" should be used to avoid complexities.
-- Check if Bifrost is configured for this project by running `bf list --help` or checking for a `.bifrost.yaml` file. If Bifrost is configured, use the "bifrost-planner" profile to create a rune tree.
-- If Bifrost is NOT configured, use the "markdown-planner" profile to create a text-based plan.
+- Check if Bifrost is configured for this project by running `bf list --help` and checking for a `.bifrost.yaml` file. If Bifrost is configured, use the "bifrost-planner" profile to create a rune tree.
+- Check if the configured bifrost server is healthy and up.
+- If Bifrost is NOT configured or the server is down, use the "markdown-planner" profile to create a text-based plan.
 
-Delegate to the planner subagent, incorporating the user's decisions and the research summary:
+Delegate to the planner subagent, incorporating the user's decisions and a VERY detailed research summary. Do not be afraid to over-supply research. Include file names and line numbers, example code from the codebase, summaries of systems, horizontal exploration results and vertical research:
 - { name: "create-plan", prompt: "Based on this research: [complete summary so that no new research must be done]\n\nUser decisions: [decisions]\n\nCreate a detailed, unambiguous implementation plan. Each step must be atomic.", profile: "<bifrost-planner or markdown-planner>" }
+- Be sure to include `files: ["rel/file-name.md", {path: "rel/file-name2.ts", tail: 100}]` with a list of files and file chunks that the subagent will need.
 
 Planning can take quite some time: a lot of information is being collated and important decisions are being made. Start with a 600s timeout and resume if the timeout is reached. Don't abandon bifrost runes: prefer to resume the subagent or if an unresolvable issue is found, `bf shatter` the successfully created runes before switching to markdown-planner.
 

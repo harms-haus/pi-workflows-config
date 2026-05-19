@@ -1,0 +1,11 @@
+name: RPIR Planning Workflow
+commandName: rpir-plan
+sessionNamePrefix: 'RPIR: '
+sessionNameMaxLength: 50
+initialMessage: |
+  Start the {workflowName} for: "{description}"
+
+  Begin with Phase 1 ({firstPhaseName}).
+phases:
+  - { subworkflow: rpir-research }
+  - { subworkflow: rpir-planning }
