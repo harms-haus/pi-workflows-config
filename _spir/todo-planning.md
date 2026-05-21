@@ -10,7 +10,7 @@ availableProfiles:
   - todo-planner
 ---
 
-Create a focused todo list from the investigation findings. **Skip Bifrost entirely** — no rune trees, no markdown planning documents. Go straight to todos.
+Create a focused todo list from the investigation findings. Go straight to todos — no heavy planning documents.
 
 **Process:**
 

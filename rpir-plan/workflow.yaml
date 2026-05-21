@@ -5,6 +5,8 @@ sessionNameMaxLength: 50
 initialMessage: |
   Start the {workflowName} for: "{description}"
 
+  The ONLY GOAL is to build a plan. DO NOT IMPLEMENT.
+
   Begin with Phase 1 ({firstPhaseName}).
 phases:
   - { subworkflow: rpir-research }

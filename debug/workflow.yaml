@@ -1,0 +1,15 @@
+name: SPIR Debug Workflow
+commandName: debug
+sessionNamePrefix: 'SPIR🐛: '
+sessionNameMaxLength: 50
+initialMessage: |
+  Start the {workflowName} for: "{description}"
+
+  Begin with Phase 1 ({firstPhaseName}).
+
+  This is a lean debug workflow — focused investigation, direct todo planning, and tight fix/review loops. No heavy planning overhead.
+phases:
+  - ../_spir/debug-investigation.md
+  - ../_spir/todo-planning.md
+  - { subworkflow: debug-fix }
+  - { subworkflow: review }

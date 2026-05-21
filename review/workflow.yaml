@@ -1,0 +1,9 @@
+name: Review
+show: workflows
+initialMessage: |
+  Start the Review loop for this session's total work.
+
+  Begin with Phase 1 ({firstPhaseName}).
+phases:
+  - ../_spir/code-reviewing.md
+  - ../_spir/fixing.md

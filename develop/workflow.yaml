@@ -1,0 +1,14 @@
+name: SPIR Development
+commandName: develop
+sessionNamePrefix: 'SPIR: '
+sessionNameMaxLength: 50
+initialMessage: |
+  Start the {workflowName} for: "{description}"
+
+  Begin with Phase 1 ({firstPhaseName}).
+phases:
+  - { subworkflow: research }
+  - { subworkflow: planning }
+  - { subworkflow: implement }
+  - { subworkflow: review }
+  - { subworkflow: update-docs }

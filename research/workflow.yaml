@@ -1,0 +1,9 @@
+name: Research
+show: workflows
+initialMessage: |
+  Start the {workflowName} for: "{description}"
+
+  Begin with Phase 1 ({firstPhaseName}).
+phases:
+  - ../_spir/scouting.md
+  - ../_spir/web-researching.md

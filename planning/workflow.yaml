@@ -1,0 +1,10 @@
+name: Planning
+show: workflows
+initialMessage: |
+  Start the {workflowName}.
+
+  Begin with Phase 1 ({firstPhaseName}).
+phases:
+  - ../_spir/planning.md
+  - ../_spir/review-plan.md
+  - ../_spir/plan-setup.md
