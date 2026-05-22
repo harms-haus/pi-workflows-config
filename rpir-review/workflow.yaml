@@ -1,9 +1,0 @@
-name: Review
-show: workflows
-initialMessage: |
-  Start the Review loop for this session's total work.
-
-  Begin with Phase 1 ({firstPhaseName}).
-phases:
-  - ../_rpir/code-reviewing.md
-  - ../_rpir/fixing.md

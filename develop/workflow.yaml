@@ -7,8 +7,15 @@ initialMessage: |
 
   Begin with Phase 1 ({firstPhaseName}).
 phases:
-  - { subworkflow: research }
-  - { subworkflow: planning }
-  - { subworkflow: implement }
-  - { subworkflow: review }
-  - { subworkflow: update-docs }
+  - ../_spir/scouting.md
+  - ../_spir/web-researching.md
+  - ../_spir/interview-user.md
+  - ../_spir/planning.md
+  - ../_spir/review-plan.md
+  - ../_spir/plan-tasks.md
+  - ../_spir/task-implementing.md
+  - ../_spir/code-reviewing.md
+  - ../_spir/fixing.md
+  - ../_docreview/doc-scouting.md
+  - ../_docreview/doc-writing.md
+  - ../_docreview/doc-reviewing.md

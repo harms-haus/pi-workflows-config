@@ -1,5 +1,0 @@
-name: Planning
-show: workflows
-phases:
-  - ../_rpir/planning-stage.md
-  - ../_rpir/review-plan-stage.md

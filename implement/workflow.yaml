@@ -1,8 +1,0 @@
-name: Implement
-show: workflows
-initialMessage: |
-  Start the {workflowName}.
-
-  Begin with Phase 1 ({firstPhaseName}).
-phases:
-  - ../_spir/task-implementing.md

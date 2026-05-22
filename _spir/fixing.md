@@ -26,4 +26,4 @@ If there are issues from the code review phase, address the findings now. Loop t
 
 For test-related fixes, use the `task-worker-tests` profile.
 
-Use `workflow_step` with action `loop` to return to the review phase after making changes. Or if no changes were needed `workflow_step next`.
+Use `workflow_step` with action `next` when all fixes are done.

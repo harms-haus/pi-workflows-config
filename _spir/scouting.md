@@ -11,7 +11,7 @@ availableProfiles:
   - horizontal-scout
 ---
 
-Conduct thorough scouting in MULTIPLE ROUNDS of parallel subagents until you have comprehensive understanding of the codebase relevant to the task. Use `delegate_to_subagents` for each round, then `get_subagent_output` for each session ID. Synthesize findings between rounds to identify gaps.
+Conduct thorough scouting in MULTIPLE ROUNDS of parallel subagents until you have comprehensive understanding of the codebase relevant to the task. Use `delegate_to_subagents` for each round, then `get_subagent_output` for each session ID. Give agents ample time to scout: keep timeouts higher than you think they should be. Synthesize findings between rounds to identify gaps.
 
 **Do NOT advance past this phase until you are confident you have found and understood ALL relevant code.** If gaps remain, spawn another round. Continue until coverage is comprehensive.
 

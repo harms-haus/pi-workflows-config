@@ -1,6 +1,6 @@
 ---
-id: plan-setup
-name: Plan Setup
+id: plan-tasks
+name: Plan Tasks
 emoji: "📝"
 tools:
   blacklist:

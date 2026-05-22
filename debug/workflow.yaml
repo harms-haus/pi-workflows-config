@@ -11,5 +11,6 @@ initialMessage: |
 phases:
   - ../_spir/debug-investigation.md
   - ../_spir/todo-planning.md
-  - { subworkflow: debug-fix }
-  - { subworkflow: review }
+  - ../_spir/debug-fixing.md
+  - ../_spir/code-reviewing.md
+  - ../_spir/fixing.md
