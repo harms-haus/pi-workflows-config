@@ -1,6 +1,6 @@
 ---
-id: debug-investigation
-name: Debug Investigation
+id: bug-scouting
+name: Bug Scouting
 emoji: "🔬"
 tools:
   blacklist:
@@ -16,7 +16,7 @@ Quickly investigate the bug to identify root cause and affected files. This is a
 
 1. **Reproduce & Scope**: Read the bug description. Use `bash` to reproduce the issue if possible (run tests, trigger the error). This is not an investigation step, you're working to get a general idea or identify the exact error message, stack trace, or incorrect behavior quickly without diving too deep.
 
-2. **Spawn Bug Scout**: Delegate to 1-4 bug-scout subagents to trace the root cause:
+2. **Spawn Bug Scouts**: Delegate to 1-4 bug-scout subagents to trace the root cause:
    `delegate_to_subagents: [{ name: "trace-root-cause", prompt: "Investigate this bug: [bug description]. Trace the root cause through the codebase. Use lsp-goto-definition, lsp-find-references, and lsp-call-hierarchy to follow the chain. Report: exact file(s) and line(s) involved, the root cause, and any contributing factors.", profile: "bug-scout" }]`
    Be sure to include `files: ["rel/file-name.md", {path: "rel/file-name2.ts", tail: 100}]` with a list of files and file chunks that the subagent will need.
 

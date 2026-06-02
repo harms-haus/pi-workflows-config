@@ -7,10 +7,12 @@ initialMessage: |
 
   Begin with Phase 1 ({firstPhaseName}).
 
-  This is a lean debug workflow — focused investigation, direct todo planning, and tight fix/review loops. No heavy planning overhead.
+  This is a lean debug workflow — focused investigation, targeted planning, and tight task/review loops.
 phases:
-  - ../_spir/debug-investigation.md
-  - ../_spir/todo-planning.md
-  - ../_spir/debug-fixing.md
+  - ../_spir/bug-scouting.md
+  - ../_spir/interview-user.md
+  - ../_spir/debug-planning.md
+  - ../_spir/debug-build-tasks.md
+  - ../_spir/task-implementing.md
   - ../_spir/code-reviewing.md
   - ../_spir/fixing.md
