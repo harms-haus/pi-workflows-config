@@ -7,7 +7,7 @@ tools:
     - edit
     - write
 availableProfiles:
-  - task-planner
+  - kanban-planner
 ---
 
 Delegate to the planner subagent, incorporating the user's decisions and a VERY detailed research summary. Do not be afraid to over-supply research. Include file names and line numbers, example code from the codebase, summaries of systems, horizontal exploration results and vertical research:
@@ -18,6 +18,6 @@ Planning can take quite some time: a lot of information is being collated and im
 
 Call `get_subagent_output` to retrieve the plan.
 
-DO NOT WRITE TODOs. The plan reviewer is next, and following that the task writer.
+DO NOT WRITE THE PLAN. The plan reviewer is next, and following that the plan builder.
 
 Use `workflow_step` with action `next` when the plan is finalized.
