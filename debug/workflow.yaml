@@ -12,7 +12,7 @@ phases:
   - ../_spir/bug-scouting.md
   - ../_spir/interview-user.md
   - ../_spir/debug-planning.md
-  - ../_spir/debug-build-tasks.md
-  - ../_spir/task-implementing.md
+  - ../_spir/build-kanban.md
+  - ../_spir/kanban-implementing.md
   - ../_spir/code-reviewing.md
   - ../_spir/fixing.md
