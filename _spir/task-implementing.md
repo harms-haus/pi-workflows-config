@@ -11,6 +11,7 @@ availableProfiles:
   - task-worker-lite
   - task-worker-tests
   - task-reviewer
+  - code-quality-reviewer
 ---
 
 While you have tasks remaining, claim up to 4 ready tasks:
@@ -27,7 +28,7 @@ After the subagents are done, move each task into the `reviewing` status:
 advance_tasks({tasks: ["task-id", "task-id2"]})
 ```
 
-Once the tasks are in `reviewing`, spawn 1-4 "task-reviewer" subagents to review the tasks for completion. DO NOT SKIP THIS STEP, it is CRITICAL. Self-review is not acceptable.
+Once the tasks are in `reviewing`, spawn "task-reviewer" and "code-quality-reviewer" subagents in parallel to review the tasks. The task-reviewer checks completion/compliance; the code-quality-reviewer checks maintainability/structure. DO NOT SKIP THIS STEP, it is CRITICAL. Self-review is not acceptable.
 
 When the reviewer(s) are done, evaluate the problems found and spawn task-workers to fix the CRITICAL, HIGH, and MEDIUM issues found.
 

@@ -7,7 +7,7 @@ tools:
     - edit
     - write
 availableProfiles:
-  - task-planner
+  - kanban-planner
 ---
 
 Create a focused implementation plan from the bug scouting findings. This is a **lean** planning phase — no heavy planning documents, just actionable tasks.
@@ -17,7 +17,7 @@ Create a focused implementation plan from the bug scouting findings. This is a *
 1. Review the bug scouting summary (root cause, affected files, contributing factors) and any user decisions from the interview phase.
 
 2. Delegate to the task-planner subagent:
-   `delegate_to_subagents: [{ name: "create-plan", prompt: "Based on this bug investigation: [complete summary including root cause, affected files, and contributing factors]\n\nUser decisions: [any decisions from interview]\n\nCreate a detailed, atomic task plan for fixing this bug. Prefer fewer, larger phases over many small ones. Group related fixes together. Each task must be one atomic change.", profile: "task-planner" }]`
+   `delegate_to_subagents: [{ name: "create-plan", prompt: "Based on this bug investigation: [complete summary including root cause, affected files, and contributing factors]\n\nUser decisions: [any decisions from interview]\n\nCreate a detailed, atomic task plan for fixing this bug. Prefer fewer, larger phases over many small ones. Group related fixes together. Each task must be one atomic change.", profile: "kanban-planner" }]`
 
    Be sure to include `files: ["rel/file-name.md", {path: "rel/file-name2.ts", tail: 100}]` with a list of files and file chunks that the subagent will need.
 

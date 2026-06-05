@@ -33,7 +33,8 @@ With the full plan and the plan review findings, build the kanban board:
 Example:
 
 ```
-create_kanban({
+write_kanban({
+  mode: "replace",
   tasks: [
     {
       title: "Setup database schema",

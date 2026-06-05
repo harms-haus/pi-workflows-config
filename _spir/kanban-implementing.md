@@ -11,13 +11,14 @@ availableProfiles:
   - task-worker-lite
   - task-worker-tests
   - task-reviewer
+  - code-quality-reviewer
 ---
 
 Implement tasks from the kanban board. This phase loops until all tasks reach "done" status.
 
 **Main loop:**
 
-1. **Claim tasks:**
+1. **Claim tasks** if you have fewer than 4 tasks claimed (eg: if you advance tasks and are back here from step 5 and 2 have moved to "done", claim_tasks anyway to get more tasks to run in parallel):
    ```
    claim_tasks({count: 4})
    ```
@@ -26,7 +27,7 @@ Implement tasks from the kanban board. This phase loops until all tasks reach "d
 2. **Spawn subagents** — For each claimed task, check its current `phase` and `profile`:
    - `test` phase → spawn `task-worker-tests` subagent
    - `implement` phase → spawn `task-worker` (complex) or `task-worker-lite` (straightforward) subagent
-   - `review` phase → spawn `task-reviewer` subagent
+   - `review` phase → spawn **both** a `task-reviewer` subagent AND a `code-quality-reviewer` subagent in parallel. **IMPORTANT**: DO NOT SKIP REVIEWS. Always review with subagents. Self-reviews and tests passing does NOT constitute a successful review. The task-reviewer checks completion/compliance; the code-quality-reviewer checks maintainability/structure.
 
    Use `delegate_to_subagents` to spawn 1-4 parallel subagents. Pass the task description as the prompt, and include `files` from the task if available.
 

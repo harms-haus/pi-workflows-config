@@ -7,12 +7,14 @@ tools:
     - edit
     - write
 availableProfiles:
+  - code-quality-reviewer
   - efficiency-reviewer
   - security-reviewer
   - ui-ux-reviewer
 ---
 
 Spawn 1-4 parallel review specialists using `delegate_to_subagents`:
+- `{ name: "code-quality-review", prompt: "Review the codebase for code quality, maintainability, and structural issues.", profile: "code-quality-reviewer" }`
 - `{ name: "efficiency-review", prompt: "Review the codebase for performance and resource efficiency issues.", profile: "efficiency-reviewer" }`
 - `{ name: "security-review", prompt: "Audit the codebase for security vulnerabilities.", profile: "security-reviewer" }`
 - `{ name: "ui-ux-review", prompt: "Evaluate UI/UX quality and check for any broken user-facing behavior.", profile: "ui-ux-reviewer" }`
