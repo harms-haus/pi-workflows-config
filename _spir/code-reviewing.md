@@ -30,4 +30,6 @@ SYNTHESIZE FINDINGS: Categorize each finding by severity:
 
 Create a summary of all findings with severity levels. This summary determines whether the fixing phase is needed.
 
+Resolve ALL medium to critical findinges, even if unrelated to your changes (pre-existing).
+
 Use `workflow_step` with action `next` when the review synthesis is complete whether or not there are issues found.
